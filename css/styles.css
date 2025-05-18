@@ -19,7 +19,14 @@ nav ul {
 	display: flex;
     
 }
-
+nav ul {
+	text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0;
+    margin: 0;
 footer{
 		width: 100%;
 		background-color: #003366; /* Azul oscuro */
@@ -48,6 +55,7 @@ header {
 }
 nav{
 	height: 46px;
+	overflow-y: auto;
 }
 
 /* Parte superior con logo y búsqueda */
