@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="es">
+<head> 
+    <meta charset="utf-8"/> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros</title>
+    <link href="img/recurso%202.png" rel="icon">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+    <link href="../Imagenes/recurso 2.png" rel="Icon" type="imagen/x-icon">
+    <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Quicksand';
+}
+
+header {
+  background-color: #eecfc9;
+}
+
+/* Parte superior con logo y búsqueda */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #83A5F2;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.logo-container h1 {
+  color: white;
+  font-size: 24px;
+  font-family: Georgia, serif;
+}
+
+.logo-container h1 span {
+  color: #FCDED6;
+}
+
+.search-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-user input {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #666;
+}
+
+.user-icon {
+  font-size: 24px;
+  color: #f55d3e;
+  border: 2px solid #f55d3e;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+/* Menú de navegación */
+nav {
+  background-color: #fce1db;
+  padding: 10px 0;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #273469;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: background 0.3s;
+}
+
+.menu > li:hover > a {
+  background-color: #e7603d;
+  color: white;
+  border-radius: 5px;
+}
+
+/* Submenú */
+.dropdown {
+  position: relative;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fce1db;
+  list-style: none;
+  padding: 10px 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  min-width: 200px;
+  z-index: 10;
+}
+
+.submenu li {
+  padding: 8px 20px;
+}
+
+.submenu li a {
+  color: black;
+  font-weight: normal;
+}
+
+.dropdown:hover .submenu {
+  display: block;
+}
+
+
+h2, h3, h4, h5, h6 {
+    font-family: 'Baloo 2', cursive;
+}
+h1{
+    font-family:'GRANDEURS',sans-serif;
+}
+
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+header, nav, main, footer {
+    width: 100%;
+    padding: 1rem;
+    max-width: 1400px;
+    margin: auto;
+}
+
+header {
+    background-color: #FBDDD5;
+    color: white;
+    text-align: center;
+}
+
+nav {
+    background-color: #FBDDD5;
+    text-align: right;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+nav li {
+    background-color: transparent;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #204ECF;
+    font-weight: bold;
+}
+nav ul li:hover a {
+    color: #EB674B;
+}
+
+section {
+    background-color: rgba(134, 161, 211, 0.74);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px; 
+    max-width: 2000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.compas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    background-color: transparent;
+}
+
+.foto-contenedor {
+    width: 250px;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.foto-contenedor img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.foto-contenedor:hover img {
+    transform: scale(1.1);
+}
+
+.hover-texto {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(235, 103, 75, 0.8);
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.foto-contenedor:hover .hover-texto {
+    opacity: 1;
+}
+
+#valores ol {
+    list-style-image: url="../img/recurso 2";
+    padding-left: 2rem;
+}
+
+.tarjetas-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    border-radius: 8px;
+}
+
+.tarjetas-flex section {
+    flex: 1 1 30%;
+    background-color: rgba(251, 221, 213, 0.8);
+    color: #3354A0;
+}
+
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    .tarjetas-flex {
+        flex-direction: column;
+    }
+    
+}
+.frase-lovecraft {
+  color: #FBDDD5;
+    background-color: transparent;
+    text-align: center;
+    padding: auto;
+    font-style: italic;
+    border-radius: auto;
+    margin: auto;
+    gap: 1.5rem;
+}
+.ubicacion {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: rgba(51, 84, 160, 0.9);
+  padding: 2rem;
+  border-radius: 1rem;
+  gap: 2rem;
+}
+
+.bloque-ubicacion {
+  flex: 1 1 45%;
+  min-width: 300px;
+}
+.redes {
+  background-color: #F26749; /* rojito */
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-top: 2rem;
+}
+
+.redes h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.iconos-redes {
+  display: flex;
+  justify-content: center;
+  gap: 8rem;
+  flex-wrap: wrap;
+}
+
+.iconos-redes a img {
+  width: 50px;
+  height: 50px;
+	
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.iconos-redes a:hover img {
+  transform: scale(1.2);
+  filter: brightness(1.2);
+}
+.button {
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+    align-content: center;
+}
+h1{
+    text-align-last: center;
+}
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #86A1D3;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.logo-container h1 {
+  color: white;
+  font-size: 24px;
+  font-family: Georgia, serif;
+}
+
+.logo-container h1 span {
+  color: #86A1D3;
+}
+
+.search-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-user input {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #666;
+}
+
+.user-icon {
+  font-size: 24px;
+  color: #f55d3e;
+  border: 2px solid #f55d3e;
+  border-radius: 50%;
+  padding: 5px;
+}
+        #contacto {
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+}
+.formulario-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    max-width: 1000px;
+    width: 100%;
+    gap: 2rem;
+    align-items: center;
+}
+
+.formulario-info {
+    flex: 1 1 500px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: none;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+}
+
+form textarea {
+    grid-column: 1 / -1;
+}
+
+form button {
+    margin-top: 1rem;
+    padding: 0.75rem 2rem;
+    background-color: #F26749;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.formulario-imagen {
+    flex: 1 1 300px;
+    text-align: izq;
+}
+
+.formulario-imagen img {
+    max-width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    margin-top: 1rem;
+}
+    </style>
+    </head>
+    
+    <body>
+   <div class="video-container">
+	  <video autoplay muted loop playsinline>
+    	<source src="../videos/fonod inicio.mp4" type="video/mp4">
+	    Tu navegador no soporta tanta chingonería.
+	</video>
+    </div>
+    
+     <header>
+        <div class="top-bar">
+          <div class="logo-container">
+           <a href="#"> <img src="../Imagenes/Logo.png" alt="Logo Bajo el Mar" ></a>
+          </div>
+          <div class="search-user">
+            <input type="text" placeholder="Buscar...">
+            <a href="usuario.html" ><div class="user-icon">👤</div></a>
+          </div>
+        </div>
+    
+        <nav>
+          <ul class="menu">
+            <li><a href="../index.html">&nbsp;Inicio</a></li>
+            <li class="dropdown">
+              <a href="articulos.html">Artículos</a>
+              <ul class="submenu">
+                <li><a href="noticias.html">Noticias y novedades</a></li>
+                <li><a href="articulos.html">Artículos</a></li>
+                <li><a href= "problemas.html">Problemas ambientales</a></li>
+              </ul>
+            </li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="conservacion.html">Conservación y preservación</a></li>
+          </ul>
+        </nav>
+</header>
+
+<main>
+  <section>
+    <h1>¿Quiénes somos?</h1>
+    <p>Somos un eqipo de estudiantes dedicados a explorar y compartir la riqueza de la vida marina. Nuestro objetivo es insprirar a otros a descubrir las maravillas ocultas bajo las olas y a comprender la importancia de preservar estos ecosistemas únicos. </p>
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/0tNLpUZfJKyxMS0nKlnyXP?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </section>
+  <section class="frase-lovecraft">
+               <h1 style="font-size:300%;" > Desarrolladores </h1>
+               </section>
+  <section class="compas">
+    <div class="foto-contenedor">
+      <img src="../Imagenes/orca.jpg" alt="biri orca">
+      <div class="hover-texto">Biridiane Trejo</div>
+    </div>
+    <div class="foto-contenedor">
+      <img src="../Imagenes/medu.jpg" alt="medu ivonne">
+      <div class="hover-texto">Ivonne Cortés</div>
+    </div>
+    <div class="foto-contenedor">
+      <img src="../Imagenes/beta.jpeg" alt="beta jose">
+      <div class="hover-texto">José Ramón</div>
+    </div>
+    <div class="foto-contenedor">
+      <img src="../Imagenes/dumbo.jpg" alt="dumbo ana">
+      <div class="hover-texto">Ana Ortiz</div>
+    </div>
+  </section>
+
+  <div class="tarjetas-flex">
+    <section>
+      <h2>Misión</h2>
+      <p>Nuestro proyecto escolar busca despertar la conciencia ambiental en niños y jóvenes mediante el estudio y difusión de la vida marina. A través de esta página web, promovemos el respeto por los ecosistemas oceánicos, fomentamos la educación sobre su importancia y alentamos acciones concretas para su conservación
+      </p>
+    </section>
+
+    <section>
+      <h2>Visión</h2>
+      <p>Nos imaginamos un mundo donde cada persona comprenda el papel fundamental del mar en nuestra vida y actúe con responsabilidad para preservarlo.</p>
+        <h2>Valores</h2>
+    <ol>
+      <li>Educación</li>
+      <li>Asombro</li>
+      <li>Responsabilidad</li>
+    </ol>
+    </section>
+
+    <section>
+      <h2>Cómo comenzamos</h2>
+      <p>Este proyecto nació como parte del trabajo final para la asignatura de Interfaz de Usuario. Guiados por nuestra profesora, asumimos el desafío de crear un espacio digital que no solo refleje principios de diseño accesible e intuitivo, sino que también impulse la conciencia ambiental.</p>
+    </section>
+    </div>
+               <section class="ubicacion">
+                <div class="bloque-ubicacion">
+                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.4088497234666!2d-98.20701512469655!3d19.00169748218763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfbf5ed00fa151%3A0x3d4c95f550d4ec44!2sBUAP%3A%20Facultad%20de%20Arquitectura!5e0!3m2!1ses-419!2smx!4v1747545598943!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                 </div>
+                 <div class="bloque-ubicacion texto-direccion">
+                 <h1 style="font-size:200%;">Cómo llegar</h1>
+                 <p>Benemérita Universidad Autónoma de Puebla<br>
+                 Facultad de Arquitectura<br>
+                 Escuela de Diseño Gráfico<br>
+                 Av San Claudio s/n, Cd Universitaria, La Hacienda, Heroica Puebla de Zaragoza.
+                 </p>
+                 <div class="formulario-imagen">
+                 <img src="../Imagenes/facu.jpg" alt="Facultad">
+                 </div>
+                   </div>
+                </section>
+                
+                <section class="frase-lovecraft">
+                <blockquote>
+                    <h1 style="font-size:300%;">"Pero más maravilloso que la sabiduría de los ancianos y que la sabiduría de los libros es la sabiduría secreta del océano"</h1>
+                    <footer><h1 style="font-size:200%;">- Howard PhillipsLovecraft</h1></footer>
+                </blockquote>
+                </section>
+                <!-formulario-->
+                <section id="contacto">
+                <div class="formulario-contenedor">
+                <div class="formulario-info">
+                <h2>Únete a nuestra causa por los océanos</h2>
+                <p>Déjanos tu correo y te enviaremos contenido educativo</p>
+                <form id="formulario-contacto">
+                   <div class="form-grid">
+                   <input type="email" placeholder="Correo electrónico*" required>
+                   <input type="text" placeholder="Nombre*" required>
+                   <input type="text" placeholder="Apellido*" required>
+                   <input type="tel" placeholder="Teléfono*" required>
+                   <input type="text" placeholder="País*" required>
+                   <textarea rows="4" placeholder="¿Qué te pareció nuestra página? ¿Te interesa aprender más sobre la vida marina?" required></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+                </form>
+                </div>
+                <div class="formulario-imagen">
+                <img src="../Imagenes/cuestionario.png" alt="img del cuestionario">
+                </div>
+                </div>
+                </section>
+                
+                <section class="redes">
+  <h2>Síguenos en nuestras redes</h2>
+  <div class="iconos-redes">
+    <a href="#" target="_blank"><img src="../Imagenes/facebook.png" alt="Facebook"></a>
+    <a href="#" target="_blank"><img src="../Imagenes/instagram.png" alt="Instagram"></a>
+    <a href="#" target="_blank"><img src="../Imagenes/x twitter.png" alt="Whatsapp"></a>
+  </div>
+</section>
+                </main>
+		
+                </body> 
+                </html>
+	

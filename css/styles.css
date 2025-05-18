@@ -1,0 +1,275 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header, nav, main {
+	width: auto;
+	height: 30px auto;
+	min-width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: "Quicksand";
+	font-size: auto;
+}
+nav ul {
+	text-align: center;
+    justify-content: center;
+	display: flex;
+    
+}
+
+footer{
+		width: 100%;
+		background-color: #003366; /* Azul oscuro */
+		color: #FFA500; /* Naranja */
+		padding: 50px;
+		margin-left: auto;
+		margin-right: auto;
+		font-family: "Quicksand";
+    	font-size: 12px;
+}
+		h6{
+			font-family: "Baloo 2";
+			font-size: 24px;
+		}
+		.f{
+			font-family: "Quicksand";
+			font-size: 14px;
+		}
+
+body {
+  font-family: 'Quicksand';
+}
+
+header {
+  background-color: #eecfc9;
+}
+nav{
+	height: 46px;
+}
+
+/* Parte superior con logo y búsqueda */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #83A5F2;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.logo-container h1 {
+  color: white;
+  font-size: 24px;
+  font-family: Georgia, serif;
+}
+
+.logo-container h1 span {
+  color: #FCDED6;
+}
+
+.search-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-user input {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #666;
+}
+
+.user-icon {
+  font-size: 24px;
+  color: #f55d3e;
+  padding: 5px;
+	margin: 5px 5px 5px 5px;
+}
+
+/* Menú de navegación */
+nav {
+  background-color: #fce1db;
+  padding: 10px 0;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #273469;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: background 0.3s;
+}
+
+.menu > li:hover > a {
+  background-color: #e7603d;
+  color: white;
+  border-radius: 5px;
+}
+
+/* Submenú */
+.dropdown {
+  position: relative;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fce1db;
+  list-style: none;
+  padding: 10px 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  min-width: 200px;
+  z-index: 10;
+}
+
+.submenu li {
+  padding: 8px 20px;
+}
+
+.submenu li a {
+  color: black;
+  font-weight: normal;
+}
+
+.dropdown:hover .submenu {
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .submenu {
+    position: static;
+    box-shadow: none;
+  }
+}
+
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .slide {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .slide-text h1 {
+    font-size: 26px;
+  }
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  background: rgba(0, 40, 100, 0.8);
+  padding: 1em;
+  border-radius: 10px;
+  margin: 0 2em;
+  margin: 2em;
+}
+
+.tab {
+  margin: 0 1em;
+  cursor: pointer;
+  color: #d3d3ff;
+  font-size: 1.2em;
+  transition: 0.3s;
+}
+
+.tab:hover, .tab.active {
+  text-decoration: underline;
+  color: white;
+}
+
+.content {
+  display: none;
+  margin: 2em auto;
+  max-width: 80%;
+}
+
+.content.active {
+  display: block;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  margin-bottom: 2em;
+  padding: 1em;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+.card img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  margin-right: 2em;
+}
+
+.card h2 {
+  margin-top: 0;
+  color: black;
+}
+
+.card p {
+  color: black;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2em;
+  padding: 2em;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
